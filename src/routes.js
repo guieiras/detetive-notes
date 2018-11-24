@@ -1,6 +1,7 @@
-import NewGamePage from './components/pages/NewGamePage';
+import GamesNewPage from './components/pages/GamesNewPage';
 import NotFoundPage from './components/pages/NotFoundPage';
 import StartPage from './components/pages/StartPage';
+import TemplatesDownloadPage from './components/pages/TemplatesDownloadPage';
 
 export default [
   {
@@ -9,7 +10,11 @@ export default [
   },
   {
     path: '/games/new',
-    component: NewGamePage,
+    component: GamesNewPage,
+  },
+  {
+    path: '/templates/download',
+    component: TemplatesDownloadPage,
   },
   {
     path: '(.*)',

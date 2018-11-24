@@ -7,30 +7,22 @@ import {
   Navbar,
   Page,
 } from 'framework7-react';
-import db from '../../boundaries/db';
 
-export default class NewGamePage extends Component {
+export default class TemplatesDownloadPage extends Component {
   constructor(props) {
     super(props);
     this.state = { templates: [] };
   }
 
-  componentDidMount() {
-    db.templates.toArray().then((templates) => {
-      this.setState({ templates });
-    });
-  }
-
   render() {
     return <Page>
-      <Navbar backLink="Voltar" title="Novo Jogo"></Navbar>
-      <BlockTitle>Selecione o modelo do jogo</BlockTitle>
+      <Navbar backLink="Voltar" title="Baixar Templates"></Navbar>
+      <BlockTitle>Templates Online</BlockTitle>
       <Block>
         <List>
           { this.state.templates.map(game => <ListItem key={game.id} title={game.title}>
             <img slot="media" alt={game.title} src={game.imageUrl} width="44" />
           </ListItem>) }
-          <ListItem link="/templates/new" title="Baixar templates online" />
         </List>
       </Block>
     </Page>
