@@ -22,8 +22,8 @@ export default class LoginPage extends Component {
       <BlockTitle>Iniciar novo Jogo</BlockTitle>
       <Block>
         <List>
-          <ListItem title="Novo Jogo" link="/jogos/novo"></ListItem>
-          <ListItem title="Carregar Jogo" link="/jogos/carregar"></ListItem>
+          <ListItem title="Novo Jogo" link="/games/new"></ListItem>
+          <ListItem title="Carregar Jogo" link="/games/load"></ListItem>
         </List>
       </Block>
       <BlockTitle>Meus Jogos</BlockTitle>

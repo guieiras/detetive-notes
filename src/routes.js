@@ -8,7 +8,7 @@ export default [
     component: StartPage,
   },
   {
-    path: '/jogos/novo',
+    path: '/games/new',
     component: NewGamePage,
   },
   {

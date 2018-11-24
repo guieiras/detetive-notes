@@ -23,7 +23,7 @@ export default class NewGamePage extends Component {
 
   render() {
     return <Page>
-      <Navbar title="Novo Jogo"></Navbar>
+      <Navbar backLink="Voltar" title="Novo Jogo"></Navbar>
       <BlockTitle>Selecione o modelo do jogo</BlockTitle>
       <Block>
         <List>
