@@ -27,7 +27,7 @@ export default class GamesNewPage extends Component {
       <BlockTitle>Selecione o modelo do jogo</BlockTitle>
       <Block>
         <List>
-          { this.state.templates.map(game => <ListItem key={game.id} title={game.title}>
+          { this.state.templates.map(game => <ListItem key={game.id} title={game.name}>
             <img slot="media" alt={game.title} src={game.imageUrl} width="44" />
           </ListItem>) }
           <ListItem link="/templates/download" title="Baixar templates online" />
