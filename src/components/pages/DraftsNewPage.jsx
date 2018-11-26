@@ -6,14 +6,16 @@ import {
   ListInput,
   Navbar,
   Page,
+  ListItem,
 } from 'framework7-react';
 import db from '../../boundaries/db';
 
 export default class DraftsNewPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { template: null, players: [] };
+    this.state = { name: '', template: null, players: [] };
     this.handleInput = this.handleInput.bind(this);
+    this.handleName = this.handleName.bind(this);
     this.createDraft = this.createDraft.bind(this);
   }
 
@@ -25,29 +27,42 @@ export default class DraftsNewPage extends Component {
   }
 
   createDraft() {
-    const { template, players } = this.state;
-    db.drafts.put({ template, players }).then((draftId) => { alert(draftId + " criado"); });
+    const { name, template, players } = this.state;
+    const promise = name ? db.drafts.put({ name, template, players }) : Promise.resolve();
+
+    promise.then(() => {
+      this.$f7router.navigate('/games/current');
+    });
   }
 
   handleInput(index) {
     return (ev) => {
       const players = this.state.players;
-      
+
       players[index] = ev.target.value;
       this.setState({ players });
     }
+  }
+
+  handleName(event) {
+    this.setState({ name: event.target.value });
   }
 
   render() {
     return <Page>
       <Navbar backLink="Voltar" title="Novo Jogo"></Navbar>
       <List>
-        {this.state.template && this.state.template.bundle.players.map((_, index) =>
+        <ListInput label="Turma" placeholder="Nome da turma" type="text" onChange={this.handleName} />
+        <ListItem header="Tipo de jogo" title={this.state.template && this.state.template.name } />
+      </List>
+
+      <List>
+        {this.state.template && this.state.template.bundle.characters.map((_, index) =>
           <ListInput key={index} label={`Jogador ${index + 1}`} type="text" onChange={this.handleInput(index)} />
         )}
       </List>
       <Block>
-        <Button big fill text="Criar" onClick={this.createDraft}></Button>
+        <Button big fill text={`${this.state.name ? 'Salvar turma e Iniciar' : 'Iniciar'}`} onClick={this.createDraft}></Button>
       </Block>
     </Page>
   }
