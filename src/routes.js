@@ -1,3 +1,4 @@
+import DraftsNewPage from './components/pages/DraftsNewPage';
 import GamesNewPage from './components/pages/GamesNewPage';
 import NotFoundPage from './components/pages/NotFoundPage';
 import StartPage from './components/pages/StartPage';
@@ -11,6 +12,10 @@ export default [
   {
     path: '/games/new',
     component: GamesNewPage,
+  },
+  {
+    path: '/templates/:id/new',
+    component: DraftsNewPage,
   },
   {
     path: '/templates/download',
