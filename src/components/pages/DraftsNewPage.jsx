@@ -9,7 +9,7 @@ import {
   ListItem,
 } from 'framework7-react';
 import db from '../../boundaries/db';
-import crypt from '../../boundaries/crypt';
+import currentGame from '../../boundaries/currentGame';
 
 export default class DraftsNewPage extends Component {
   constructor(props) {
@@ -33,7 +33,7 @@ export default class DraftsNewPage extends Component {
     const promise = name ? db.drafts.put(draft) : Promise.resolve();
 
     promise.then(() => {
-      localStorage.setItem('_currentGame', crypt.encrypt(draft));
+      currentGame.generateFromDraft(draft);
       this.$f7router.navigate('/games/current');
     });
   }

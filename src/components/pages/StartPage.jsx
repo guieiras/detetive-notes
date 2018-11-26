@@ -7,6 +7,7 @@ import {
   Navbar,
   Page,
 } from 'framework7-react';
+import currentGame from '../../boundaries/currentGame';
 
 export default class LoginPage extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ export default class LoginPage extends Component {
   }
 
   componentDidMount() {
-    if (localStorage.getItem('_currentGame')) {
+    if (currentGame.isPresent()) {
       this.$f7router.navigate('/games/current');
     }
   }
