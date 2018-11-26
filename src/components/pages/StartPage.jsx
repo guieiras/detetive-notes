@@ -13,6 +13,13 @@ export default class LoginPage extends Component {
     super(props);
     this.state = { games: [] };
   }
+
+  componentDidMount() {
+    if (localStorage.getItem('_currentGame')) {
+      this.$f7router.navigate('/games/current');
+    }
+  }
+
   render() {
     return <Page>
       <Navbar title="Detetive - Ficha de Palpites"></Navbar>
