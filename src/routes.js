@@ -1,4 +1,5 @@
 import DraftsNewPage from './components/pages/DraftsNewPage';
+import GamesCurrentPage from './components/pages/GamesCurrentPage';
 import GamesNewPage from './components/pages/GamesNewPage';
 import NotFoundPage from './components/pages/NotFoundPage';
 import StartPage from './components/pages/StartPage';
@@ -8,6 +9,10 @@ export default [
   {
     path: '/',
     component: StartPage,
+  },
+  {
+    path: '/games/current',
+    component: GamesCurrentPage,
   },
   {
     path: '/games/new',
