@@ -19,9 +19,9 @@ export default {
   generateFromDraft(draft) {
     this.save({
       template: draft.id,
-      characters: draft.template.bundle.characters.map((char) => { return { name: char, owner: '', flag: '' } }),
-      weapons: draft.template.bundle.weapons.map((weapon) => { return { name: weapon, owner: '', flag: '' } }),
-      places: draft.template.bundle.places.map((place) => { return { name: place, owner: '', flag: '' } }),
+      characters: draft.template.bundle.characters.map((char) => { return { name: char, owners: [], flags: [] } }),
+      weapons: draft.template.bundle.weapons.map((weapon) => { return { name: weapon, owners: [], flags: [] } }),
+      places: draft.template.bundle.places.map((place) => { return { name: place, owners: [], flags: [] } }),
       players: draft.players.filter((player) => !!player)
     });
   }

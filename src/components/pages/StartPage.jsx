@@ -12,17 +12,18 @@ import currentGame from '../../boundaries/currentGame';
 export default class LoginPage extends Component {
   constructor(props) {
     super(props);
+    this.onLoad = this.onLoad.bind(this);
     this.state = { games: [] };
   }
 
-  componentDidMount() {
+  onLoad() {
     if (currentGame.isPresent()) {
       this.$f7router.navigate('/games/current');
     }
   }
 
   render() {
-    return <Page>
+    return <Page onPageAfterIn={this.onLoad}>
       <Navbar title="Detetive - Ficha de Palpites"></Navbar>
       <Block strong>
         <p>Bem-vindo à Ficha de Palpites. Você pode iniciar um novo jogo ou carregar uma configuração existente.</p>
