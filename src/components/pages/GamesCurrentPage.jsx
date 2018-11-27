@@ -82,25 +82,29 @@ export default class GamesCurrentPage extends Component {
   }
 
   render() {
+    const cardTypeTranslation = { characters: 'Personagens', weapons: 'Armas', places: 'Lugares' }
     return <Page>
       <Navbar title="Ficha de Suspeitos">
         <NavRight>
           <Link iconMaterial="delete" />
         </NavRight>
       </Navbar>
-      <p>{ JSON.stringify(this.state.game) }</p>
-      <BlockTitle>Personagens</BlockTitle>
-      <List>
-        { this.state.game.characters.map((char, idx) => <ListItem key={idx} title={char.name}>
-          <div slot="after" style={{ marginRight: '8px' }}>
-            { char.flags.map((flag, flagIdx) => <Link style={{ margin: '0 2px' }} iconMaterial={flag.icon} key={flagIdx} color={flag.color} onClick={this.removeItem('characters', idx, 'flags', flagIdx)} />) }
-          </div>
-          <div slot="after" style={{ marginRight: '8px' }}>
-            { char.owners.map((owner, ownerIdx) => <Chip style={{ margin: '0 2px' }} key={ownerIdx} text={owner} deleteable onClick={ this.removeItem('characters', idx, 'owners', ownerIdx) } />) }
-          </div>
-          <Button slot="after" onClick={this.selectItem('characters', idx)} iconMaterial="flag" />
-        </ListItem>) }
-      </List>
+      {
+        Object.keys(cardTypeTranslation).map((key) => <div key={key}>
+          <BlockTitle>{cardTypeTranslation[key]}</BlockTitle>
+          <List>
+            { this.state.game[key].map((char, idx) => <ListItem key={idx} title={char.name}>
+              <div slot="after" style={{ marginRight: '8px' }}>
+                { char.flags.map((flag, flagIdx) => <Link style={{ margin: '0 2px' }} iconMaterial={flag.icon} key={flagIdx} color={flag.color} onClick={this.removeItem(key, idx, 'flags', flagIdx)} />) }
+              </div>
+              <div slot="after" style={{ marginRight: '8px' }}>
+                { char.owners.map((owner, ownerIdx) => <Chip style={{ margin: '0 2px' }} key={ownerIdx} text={owner} deleteable onClick={ this.removeItem(key, idx, 'owners', ownerIdx) } />) }
+              </div>
+              <Button slot="after" onClick={this.selectItem(key, idx)} iconMaterial="flag" />
+            </ListItem>) }
+          </List>
+        </div>)
+      }
     </Page>
   }
 }
