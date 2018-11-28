@@ -11,6 +11,10 @@ export default function (props) {
     name: 'Detetive Notes',
     theme: 'auto',
     routes,
+    dialog: {
+      buttonOk: 'OK',
+      buttonCancel: 'Cancelar'
+    }
   };
 
   return (

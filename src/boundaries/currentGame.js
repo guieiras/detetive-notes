@@ -9,11 +9,19 @@ export default {
   },
 
   fetch() {
-    return JSON.parse(encryptor.decrypt(localStorage.getItem('_currentGame')));
+    try {
+      return JSON.parse(encryptor.decrypt(localStorage.getItem('_currentGame')));
+    } catch {
+      return undefined;
+    }  
   },
 
   isPresent() {
     return !!localStorage.getItem('_currentGame');
+  },
+
+  destroy() {
+    return localStorage.removeItem('_currentGame');
   },
 
   generateFromDraft(draft) {

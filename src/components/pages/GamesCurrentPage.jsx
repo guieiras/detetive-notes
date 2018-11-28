@@ -17,7 +17,18 @@ export default class GamesCurrentPage extends Component {
     super(props);
     this.removeItem = this.removeItem.bind(this);
     this.selectItem = this.selectItem.bind(this);
+    this.exitGame = this.exitGame.bind(this);
     this.state = { game: currentGame.fetch() };
+  }
+
+  exitGame() {
+    this.$f7.dialog.confirm(
+      'A ficha atual será apagada. Não é possível desfazer essa ação.', 
+      'Deseja sair?',
+      () => { 
+        currentGame.destroy();
+        this.$f7router.navigate('/'); 
+      })
   }
 
   selectItem(item, idx) {
@@ -27,12 +38,12 @@ export default class GamesCurrentPage extends Component {
         buttons: [this.state.game.players.map((player) => {
           return {
             text: player,
-            icon: `<span style="width: 45px;
-                                height: 45px;
+            icon: `<span style="width: 48px;
+                                height: 48px;
                                 line-height: 47px;
                                 vertical-align: middle;
                                 font-size: 26px;"
-                          class="badge color-blue">
+                          class="badge color-gray">
                             ${player.substring(0, 1)}
                     </span>`,
             onClick: this.pushItem(item, idx, 'owners', player).bind(this)
@@ -86,7 +97,8 @@ export default class GamesCurrentPage extends Component {
     return <Page>
       <Navbar title="Ficha de Suspeitos">
         <NavRight>
-          <Link iconMaterial="delete" />
+          <Button iconF7="qrcode" />
+          <Button iconF7="exit" onClick={this.exitGame} />
         </NavRight>
       </Navbar>
       {
