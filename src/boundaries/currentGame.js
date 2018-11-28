@@ -24,6 +24,16 @@ export default {
     return localStorage.removeItem('_currentGame');
   },
 
+  toEmpty() {
+    const filledGame = this.fetch();
+    return JSON.stringify({
+      characters: filledGame.characters.map((char) => { return { name: char.name, owners: [], flags: [] } }),
+      weapons: filledGame.weapons.map((weapon) => { return { name: weapon.name, owners: [], flags: [] } }),
+      places: filledGame.places.map((place) => { return { name: place.name, owners: [], flags: [] } }),
+      players: filledGame.players
+    });
+  },
+
   generateFromDraft(draft) {
     this.save({
       template: draft.id,
