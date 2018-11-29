@@ -13,7 +13,7 @@ export default {
       return JSON.parse(encryptor.decrypt(localStorage.getItem('_currentGame')));
     } catch {
       return undefined;
-    }  
+    }
   },
 
   isPresent() {
@@ -26,12 +26,12 @@ export default {
 
   toEmpty() {
     const filledGame = this.fetch();
-    return {
-      characters: filledGame.characters.map((char) => char.name),
-      weapons: filledGame.weapons.map((weapon) => weapon.name),
-      places: filledGame.places.map((place) => place.name),
-      players: filledGame.players
-    };
+    return [
+      filledGame.characters.map((char) => char.name),
+      filledGame.weapons.map((weapon) => weapon.name),
+      filledGame.places.map((place) => place.name),
+      filledGame.players
+    ];
   },
 
   generateFromDraft(draft) {

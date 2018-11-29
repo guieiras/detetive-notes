@@ -9,10 +9,7 @@ import {
   Navbar,
   NavRight,
   Page,
-  Popover,
 } from 'framework7-react';
-import QRCode from 'qrcode-generator';
-import Pack from 'jsonpack/main';
 import currentGame from '../../boundaries/currentGame';
 
 export default class GamesCurrentPage extends Component {
@@ -21,30 +18,18 @@ export default class GamesCurrentPage extends Component {
     this.removeItem = this.removeItem.bind(this);
     this.selectItem = this.selectItem.bind(this);
     this.exitGame = this.exitGame.bind(this);
-    this.showQrCode = this.showQrCode.bind(this);
     this.container = React.createRef();
     this.state = { game: currentGame.fetch() };
   }
 
   exitGame() {
     this.$f7.dialog.confirm(
-      'A ficha atual será apagada. Não é possível desfazer essa ação.', 
+      'A ficha atual será apagada. Não é possível desfazer essa ação.',
       'Deseja sair?',
-      () => { 
+      () => {
         currentGame.destroy();
-        this.$f7router.navigate('/'); 
+        this.$f7router.navigate('/');
       })
-  }
-
-  showQrCode() {
-    const qrcode = QRCode(0, 'L');
-    qrcode.addData(Pack.pack(currentGame.toEmpty()));
-    qrcode.make();
-    this.container.current.innerHTML = qrcode.createImgTag();
-    const img = this.container.current.querySelector('img');
-    img.width = 240
-    img.height = 240
-
   }
 
   selectItem(item, idx) {
@@ -113,7 +98,6 @@ export default class GamesCurrentPage extends Component {
     return <Page>
       <Navbar title="Ficha de Suspeitos">
         <NavRight>
-          <Button iconF7="qrcode" popoverOpen=".popover-menu" />
           <Button iconF7="exit" onClick={this.exitGame} />
         </NavRight>
       </Navbar>
@@ -133,9 +117,6 @@ export default class GamesCurrentPage extends Component {
           </List>
         </div>)
       }
-      <Popover className="popover-menu" onPopoverOpen={this.showQrCode}>
-        <div ref={this.container} style={{ width: '245px', height: '245px', marginLeft: '11px', marginTop: '8px' }}></div>
-      </Popover>
     </Page>
   }
 }
