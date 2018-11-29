@@ -12,6 +12,7 @@ import {
   Popover,
 } from 'framework7-react';
 import QRCode from 'qrcode-generator';
+import Pack from 'jsonpack/main';
 import currentGame from '../../boundaries/currentGame';
 
 export default class GamesCurrentPage extends Component {
@@ -37,7 +38,7 @@ export default class GamesCurrentPage extends Component {
 
   showQrCode() {
     const qrcode = QRCode(0, 'L');
-    qrcode.addData(currentGame.toEmpty());
+    qrcode.addData(Pack.pack(currentGame.toEmpty()));
     qrcode.make();
     this.container.current.innerHTML = qrcode.createImgTag();
     const img = this.container.current.querySelector('img');

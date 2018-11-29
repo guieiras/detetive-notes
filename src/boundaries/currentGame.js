@@ -26,12 +26,12 @@ export default {
 
   toEmpty() {
     const filledGame = this.fetch();
-    return JSON.stringify({
-      characters: filledGame.characters.map((char) => { return { name: char.name, owners: [], flags: [] } }),
-      weapons: filledGame.weapons.map((weapon) => { return { name: weapon.name, owners: [], flags: [] } }),
-      places: filledGame.places.map((place) => { return { name: place.name, owners: [], flags: [] } }),
+    return {
+      characters: filledGame.characters.map((char) => char.name),
+      weapons: filledGame.weapons.map((weapon) => weapon.name),
+      places: filledGame.places.map((place) => place.name),
       players: filledGame.players
-    });
+    };
   },
 
   generateFromDraft(draft) {
