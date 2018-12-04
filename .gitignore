@@ -24,3 +24,4 @@ src/fonts
 
 # Env
 src/environment/development.json
+src/environment/production.json
