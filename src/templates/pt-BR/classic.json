@@ -5,31 +5,31 @@
   "imageUrl": "https://i.ibb.co/CK1DsQK/detetive.png",
   "bundle": {
     "characters": [
-      "Cel. Mustard",
-      "Dona Branca",
-      "Dona Violeta",
+      "Cel. Mostarda",
       "Prof. Black",
+      "Dona Violeta",
       "Sr. Marinho",
-      "Srta. Rosa"
+      "Srta. Rosa",
+      "Dona Branca"
     ],
     "weapons": [
-      "Cano",
-      "Castiçal",
-      "Chave Inglesa",
-      "Corda",
       "Punhal",
-      "Revólver"
+      "Castiçal",
+      "Revólver",
+      "Corda",
+      "Cano",
+      "Chave Inglesa"
     ],
     "places": [
-      "Biblioteca",
-      "Cozinha",
-      "Escritório",
       "Hall",
       "Sala de Estar",
+      "Cozinha",
       "Sala de Jantar",
-      "Sala de Música",
       "Salão de Festas",
-      "Salão de Jogos"
+      "Sala de Música",
+      "Salão de Jogos",
+      "Biblioteca",
+      "Escritório"
     ]
   }
 }

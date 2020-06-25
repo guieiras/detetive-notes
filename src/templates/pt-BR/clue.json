@@ -1,0 +1,35 @@
+{
+  "id": "ptbr-clue",
+  "name": "Clue",
+  "version": 1,
+  "imageUrl": "https://i.ibb.co/L6j1ynf/clue.png",
+  "bundle": {
+    "characters": [
+      "Cel. Mustard",
+      "Prof. Plum",
+      "Rev. Green",
+      "Sra. Peacock",
+      "Srta. Scarlet",
+      "Sra. White"
+    ],
+    "weapons": [
+      "Faca",
+      "Castiçal",
+      "Revólver",
+      "Corda",
+      "Cano de Chumbo",
+      "Chave Inglesa"
+    ],
+    "places": [
+      "Entrada",
+      "Sala de Estar",
+      "Sala de Jantar",
+      "Cozinha",
+      "Sala de Música",
+      "Jardim de Inverno",
+      "Salão de Jogos",
+      "Biblioteca",
+      "Escritório"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "new-detetive",
+  "name": "Novo Detetive",
+  "version": 1,
+  "imageUrl": "https://i.ibb.co/crTdLRR/newdetetive.png",
+  "bundle": {
+    "characters": [
+      "César Hipólito",
+      "James",
+      "Tony Gourmet",
+      "Dona Margarida",
+      "Dra. Sara",
+      "Rebecca Salão",
+      "Sérgio Soturno",
+      "Soraya"
+    ],
+    "weapons": [
+      "Espingarda",
+      "Pá",
+      "Pé de cabra",
+      "Tesoura",
+      "Arma química",
+      "Veneno",
+      "Soco inglês",
+      "Faca"
+    ],
+    "places": [
+      "Prefeitura",
+      "Restaurante",
+      "Floricultura",
+      "Boate",
+      "Hospital",
+      "Mansão",
+      "Cemitério",
+      "Praça",
+      "Hotel",
+      "Banco",
+      "Estação de Trem"
+    ]
+  }
+}
