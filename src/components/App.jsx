@@ -1,5 +1,5 @@
 import React from 'react';
-import { App, View, Statusbar } from 'framework7-react';
+import { App, View } from 'framework7-react';
 
 import routes from '../routes';
 
@@ -19,7 +19,6 @@ export default function (props) {
 
   return (
     <App params={f7params}>
-      <Statusbar />
       <View id="main-view" url="/" main className="ios-edges"/>
     </App>
   );
