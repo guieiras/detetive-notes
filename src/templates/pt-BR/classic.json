@@ -1,0 +1,35 @@
+{
+  "id": "classic-detetive",
+  "name": "Detetive Clássico",
+  "version": 1,
+  "imageUrl": "https://i.ibb.co/CK1DsQK/detetive.png",
+  "bundle": {
+    "characters": [
+      "Cel. Mustard",
+      "Dona Branca",
+      "Dona Violeta",
+      "Prof. Black",
+      "Sr. Marinho",
+      "Srta. Rosa"
+    ],
+    "weapons": [
+      "Cano",
+      "Castiçal",
+      "Chave Inglesa",
+      "Corda",
+      "Punhal",
+      "Revólver"
+    ],
+    "places": [
+      "Biblioteca",
+      "Cozinha",
+      "Escritório",
+      "Hall",
+      "Sala de Estar",
+      "Sala de Jantar",
+      "Sala de Música",
+      "Salão de Festas",
+      "Salão de Jogos"
+    ]
+  }
+}
