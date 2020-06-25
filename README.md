@@ -1,25 +1,52 @@
-# Detetive - Ficha de Palpites
+# Clue Notes
 
-To get started, clone this repo as whatever you want to name your app:
+An utility to Cluedo tabletop game. You can use this web app instead the classic paper sheet.
 
+## Getting Started
 
-Running the app:
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-```
-npm install
-npm start
-```
+### Prerequisites
 
-To build your app for deployment, run:
+What things you need to install the software and how to install them
 
 ```
-npm run build
+Node.JS
 ```
 
-The build folder will then contain all of your app's files, optimized and ready for deployment.
+### Installing
 
-This template was created with [Create React App](https://github.com/facebookincubator/create-react-app). It is suggested that you read more about Create React App to understand the full capabilities of the toolset.
+This will help you to get a development env running
 
-### Issues
+- Install dependencies
 
-Please log any issues to the main [Framework7 repo](https://github.com/framework7io/framework7/issues).
+```
+yarn install
+```
+
+- Start development server
+
+```
+yarn start
+```
+
+## Deployment
+
+You can build the app for production using `build` script.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+```
+yarn build
+```
+
+This build is minified and filenames include the hashes.
+You can deploy `/build` folder on a static file hosting.
+
+## Built With
+
+* [React](https://reactjs.org) - Frontend library
+* [Framework7](https://framework7.io) - User Interface
+
+## Authors
+
+* **[Guilherme Eiras](https://github.com/guieiras)** - *Concept and initial work*
