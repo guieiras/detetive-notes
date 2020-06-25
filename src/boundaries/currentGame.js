@@ -1,16 +1,11 @@
-import Cryptr from 'cryptr';
-import config from '../environment/config';
-
-const encryptor = new Cryptr(config.GAMESTATE_SECRET);
-
 export default {
   save(object) {
-    localStorage.setItem('_currentGame', encryptor.encrypt(JSON.stringify(object)));
+    localStorage.setItem('_currentGame', JSON.stringify(object));
   },
 
   fetch() {
     try {
-      return JSON.parse(encryptor.decrypt(localStorage.getItem('_currentGame')));
+      return JSON.parse(localStorage.getItem('_currentGame'));
     } catch {
       return undefined;
     }
