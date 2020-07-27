@@ -95,7 +95,7 @@ export default class GamesCurrentPage extends Component {
     return <Page>
       <Navbar title="Ficha de Suspeitos">
         <NavRight>
-          <Button iconF7="exit" onClick={this.exitGame} />
+          <Button iconMaterial="exit_to_app" onClick={this.exitGame} />
         </NavRight>
       </Navbar>
       {
